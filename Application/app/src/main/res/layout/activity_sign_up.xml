@@ -49,6 +49,7 @@
         android:layout_height="wrap_content"/>
 
     <EditText
+        android:inputType="textPassword"
         android:layout_marginTop="10dp"
         android:id="@+id/edSignUpPassword"
         android:padding="20dp"

@@ -1,9 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EFEF2F"
     tools:context=".AdminCatlogActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:background="@drawable/input_design"
+        android:id="@+id/tvCatlog"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:text="Add new Product"
+        android:textAlignment="center"
+        android:textSize="26sp"
+        android:textStyle="bold"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutCatlog1"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="45dp"
+        android:layout_below="@+id/tvCatlog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivSketches"
+            android:layout_width="77dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/sketches" />
+
+        <ImageView
+            android:id="@+id/ivScenery"
+            android:layout_width="101dp"
+            android:layout_height="120dp"
+            android:src="@drawable/scenery" />
+
+        <ImageView
+            android:id="@+id/ivAbstractArt"
+            android:layout_width="101dp"
+            android:layout_height="120dp"
+            android:src="@drawable/abstractart" />
+
+        <ImageView
+            android:id="@+id/ivMadhubaniArt"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:src="@drawable/madhubani" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutCatlog2"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="45dp"
+        android:layout_below="@+id/linearLayoutCatlog1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:padding="2dp"
+            android:id="@+id/ivGlass"
+            android:layout_width="77dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/glass" />
+
+        <ImageView
+            android:padding="2dp"
+            android:id="@+id/ivMicron"
+            android:layout_width="101dp"
+            android:layout_height="120dp"
+            android:src="@drawable/micron" />
+
+        <ImageView
+            android:padding="2dp"
+            android:id="@+id/ivCubism"
+            android:layout_width="101dp"
+            android:layout_height="120dp"
+            android:src="@drawable/cubism" />
+
+        <ImageView
+            android:padding="2dp"
+            android:id="@+id/ivIllustration"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:src="@drawable/illustration" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutCatlog3"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="45dp"
+        android:layout_below="@+id/linearLayoutCatlog2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:padding="2dp"
+            android:id="@+id/ivModernArt"
+            android:layout_width="77dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/modernism" />
+
+        <ImageView
+            android:padding="2dp"
+            android:id="@+id/ivPopArt"
+            android:layout_width="101dp"
+            android:layout_height="120dp"
+            android:src="@drawable/popart" />
+
+        <ImageView
+            android:padding="2dp"
+            android:id="@+id/ivGeometric"
+            android:layout_width="101dp"
+            android:layout_height="120dp"
+            android:src="@drawable/geometric" />
+
+        <ImageView
+            android:padding="2dp"
+            android:id="@+id/ivSpiritual"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:src="@drawable/spiritual" />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
