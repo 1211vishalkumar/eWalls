@@ -17,8 +17,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import Model.Users;
-import Prevalent.Prevalent;
+import com.example.myapplication.Model.Users;
+import com.example.myapplication.Prevalent.Prevalent;
 import io.paperdb.Paper;
 
 public class MainActivity extends AppCompatActivity {
@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                             Intent intent = new Intent(MainActivity.this,HomeActivity.class);
                             Prevalent.currentOnlineUser = usersData;
                             startActivity(intent);
-                            
+
                         }else{
                             //dissmiss the loading bar
                             loadingBar.dismiss();

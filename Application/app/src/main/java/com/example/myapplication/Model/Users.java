@@ -1,20 +1,24 @@
-package Model;
+package com.example.myapplication.Model;
 
 public class Users {
-    private String name,phoneNo,password;
+    private String name,phoneNo,password,image,address;
+
 
     // constructor
     public Users(){
 
     }
     // forming the constructor
-    public Users(String name, String phoneNo, String password) {
+
+    public Users(String name, String phoneNo, String password, String image, String address) {
         this.name = name;
         this.phoneNo = phoneNo;
         this.password = password;
+        this.image = image;
+        this.address = address;
     }
 
-    //generating the getter and setter
+    //getter and setter
 
     public String getName() {
         return name;
@@ -38,5 +42,21 @@ public class Users {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

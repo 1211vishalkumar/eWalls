@@ -1,6 +1,6 @@
-package Prevalent;
+package com.example.myapplication.Prevalent;
 
-import Model.Users;
+import com.example.myapplication.Model.Users;
 
 public class Prevalent {
     public static Users currentOnlineUser;

@@ -1,4 +1,4 @@
-package Model;
+package com.example.myapplication.Model;
 
 public class Products {
     private String pname,price,description,image,category,pid,date,time;

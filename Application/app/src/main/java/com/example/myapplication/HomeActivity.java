@@ -22,18 +22,14 @@ import com.squareup.picasso.Picasso;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.core.view.GravityCompat;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import Model.Products;
-import Prevalent.Prevalent;
+import com.example.myapplication.Model.Products;
+import com.example.myapplication.Prevalent.Prevalent;
 import de.hdodenhof.circleimageview.CircleImageView;
 import io.paperdb.Paper;
 
@@ -41,6 +37,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     //private AppBarConfiguration mAppBarConfiguration;
     //creating dtabse reference
+
     private DatabaseReference productRef;
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
@@ -87,6 +84,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         CircleImageView userProfileImage = headerView.findViewById(R.id.userProfileImage);
 
         tvUserProfileName.setText(Prevalent.currentOnlineUser.getName());
+        Picasso.get().load(Prevalent.currentOnlineUser.getImage()).placeholder(R.drawable.profile).into(userProfileImage);
 
         recyclerView = findViewById(R.id.rvMenu);
         recyclerView.setHasFixedSize(true);
