@@ -47,7 +47,8 @@
             android:id="@+id/ivAbstractArt"
             android:layout_width="101dp"
             android:layout_height="120dp"
-            android:src="@drawable/abstractart" />
+            android:src="@drawable/abs" />
+
 
         <ImageView
             android:id="@+id/ivMadhubaniArt"
@@ -119,7 +120,7 @@
             android:id="@+id/ivPopArt"
             android:layout_width="101dp"
             android:layout_height="120dp"
-            android:src="@drawable/popart" />
+            android:src="@drawable/pop" />
 
         <ImageView
             android:padding="2dp"

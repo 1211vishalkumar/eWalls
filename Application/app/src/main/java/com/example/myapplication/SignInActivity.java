@@ -146,7 +146,7 @@ public class SignInActivity extends AppCompatActivity {
                                 loadingBar.dismiss();
 
                                 // now sending the user to homeActivity
-                                Intent intent = new Intent(SignInActivity.this,AdminAddingNewProductActivity.class);
+                                Intent intent = new Intent(SignInActivity.this,AdminCatlogActivity.class);
                                 startActivity(intent);
                             }else if(parentDbName.equals("Users")){
                                 // then we gonna allow the user to access to its account
@@ -155,6 +155,7 @@ public class SignInActivity extends AppCompatActivity {
 
                                 // now sending the user to homeActivity
                                 Intent intent = new Intent(SignInActivity.this,HomeActivity.class);
+                                Prevalent.currentOnlineUser = usersData;
                                 startActivity(intent);
                             }
 
