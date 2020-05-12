@@ -95,7 +95,9 @@ public class MainActivity extends AppCompatActivity {
 
                             // now sending the user to homeActivity
                             Intent intent = new Intent(MainActivity.this,HomeActivity.class);
+                            Prevalent.currentOnlineUser = usersData;
                             startActivity(intent);
+                            
                         }else{
                             //dissmiss the loading bar
                             loadingBar.dismiss();
