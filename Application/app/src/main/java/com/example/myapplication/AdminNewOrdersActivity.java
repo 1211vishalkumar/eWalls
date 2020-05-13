@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,7 +49,7 @@ public class AdminNewOrdersActivity extends AppCompatActivity {
         FirebaseRecyclerAdapter<AdminOrders,AdminOrdersViewHolder> adapter
                 = new FirebaseRecyclerAdapter<AdminOrders, AdminOrdersViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull AdminOrdersViewHolder holder, int position, @NonNull AdminOrders model) {
+            protected void onBindViewHolder(@NonNull AdminOrdersViewHolder holder, final int position, @NonNull final AdminOrders model) {
                 // in this we gonna display the values on our fields of Orders_layout
                 holder.tvUserNameOrder.setText("Name :" + model.getName());
                 holder.tvUserPhoneNoOrder.setText("Phone :" + model.getPhoneNo());
@@ -56,7 +57,18 @@ public class AdminNewOrdersActivity extends AppCompatActivity {
                 holder.tvUserShippingAddressAndCityOrder.setText("Shipping Address :" + model.getAddress() + " ," + model.getCity());
                 holder.tvUserDateAndTimeOrder.setText("Ordered At :" + model.getDate() + "  " + model.getTime());
 
+                holder.btnShowAllProducts.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
 
+                        String uID = getRef(position).getKey();
+
+                        // now we send the intent to AdminUserProductsActivity
+                        Intent intent = new Intent(AdminNewOrdersActivity.this,AdminUserProductsActivity.class);
+                        intent.putExtra("uid",uID);
+                        startActivity(intent);
+                    }
+                });
             }
 
             @NonNull

@@ -137,6 +137,23 @@ public class CartActivity extends AppCompatActivity {
                                                         }
                                                     }
                                                 });
+                                        cartListRef.child("Admin View")
+                                                .child(Prevalent.currentOnlineUser.getPhoneNo())
+                                                .child("Products")
+                                                .child(model.getPid())
+                                                .removeValue()
+                                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<Void> task) {
+                                                        if(task.isSuccessful()){
+                                                            Toast.makeText(CartActivity.this, "Item removed from your Cart", Toast.LENGTH_SHORT).show();
+
+                                                            Intent intent = new Intent(CartActivity.this,HomeActivity.class);
+                                                            startActivity(intent);
+                                                        }
+                                                    }
+                                                });
+
                                     }
                             }
                         });
