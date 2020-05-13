@@ -5,12 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 public class AdminCatlogActivity extends AppCompatActivity {
     private ImageView ivSketches,ivScenery,ivAbstractArt,ivMadhubaniArt;
     private ImageView ivGlass,ivMicron,ivCubism,ivIllustration;
     private ImageView ivModernArt,ivPopArt,ivGeometric,ivSpiritual;
+    private Button btnAdminSignOut,btnCheckOrders;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +35,27 @@ public class AdminCatlogActivity extends AppCompatActivity {
         ivGeometric= findViewById(R.id.ivGeometric);
         ivSpiritual = findViewById(R.id.ivSpiritual);
 
+        btnAdminSignOut = findViewById(R.id.btnAdminSignOut);
+        btnCheckOrders = findViewById(R.id.btnCheckOrders);
 
+        btnAdminSignOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminCatlogActivity.this,MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                finish();
+            }
+        });
 
+        btnCheckOrders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminCatlogActivity.this,AdminNewOrdersActivity.class);
+                startActivity(intent);
 
+            }
+        });
 
 
         ivSketches.setOnClickListener(new View.OnClickListener() {

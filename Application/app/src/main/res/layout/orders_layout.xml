@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="8dp"
+    android:layout_width="match_parent"
+    app:cardElevation="10dp"
+    app:cardCornerRadius="6dp"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:padding="1dp"
+        android:background="#45E1E1"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvUserNameOrder"
+            android:textStyle="bold"
+            android:layout_marginLeft="5dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="User Name"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tvUserPhoneNoOrder"
+            android:textStyle="bold"
+            android:layout_marginRight="5dp"
+            android:layout_alignParentEnd="true"
+            android:textAlignment="viewEnd"
+            android:layout_marginLeft="5dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Phone Number"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:layout_below="@+id/tvUserNameOrder"
+            android:id="@+id/tvUserTotalPriceOrder"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Total Price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:layout_below="@+id/tvUserTotalPriceOrder"
+            android:id="@+id/tvUserShippingAddressAndCityOrder"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:text="Address and City"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:layout_below="@+id/tvUserShippingAddressAndCityOrder"
+            android:id="@+id/tvUserDateAndTimeOrder"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:text="Date Time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnShowAllProducts"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="Show This Order Products"
+            android:background="@drawable/buttons"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_below="@+id/tvUserDateAndTimeOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

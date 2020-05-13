@@ -12,7 +12,7 @@
         android:id="@+id/tvCatlog"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="27dp"
+        android:layout_marginTop="15dp"
         android:text="Add new Product"
         android:textAlignment="center"
         android:textSize="26sp"
@@ -26,7 +26,7 @@
         android:orientation="horizontal"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="15dp"
         android:layout_below="@+id/tvCatlog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -63,7 +63,7 @@
         android:orientation="horizontal"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="15dp"
         android:layout_below="@+id/linearLayoutCatlog1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -103,7 +103,7 @@
         android:orientation="horizontal"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="15dp"
         android:layout_below="@+id/linearLayoutCatlog2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -137,6 +137,36 @@
             android:src="@drawable/spiritual" />
 
     </LinearLayout>
+
+    <Button
+
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:text="Check New Orders"
+        android:layout_marginBottom="15dp"
+        android:id="@+id/btnCheckOrders"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_above="@+id/btnAdminSignOut"
+        android:background="@drawable/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:layout_marginBottom="15dp"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:text="Sign Out"
+        android:id="@+id/btnAdminSignOut"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 
 
