@@ -66,4 +66,7 @@ dependencies {
 
     //adding AurtherHub library to crop the image
     implementation 'com.theartofdev.edmodo:android-image-cropper:2.7.+'
+
+    //adding dependency for the cart quantity button Android Arsenal
+    implementation 'com.cepheuen.elegant-number-button:lib:1.0.2'
 }
