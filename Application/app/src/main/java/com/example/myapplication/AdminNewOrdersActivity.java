@@ -1,10 +1,12 @@
 package com.example.myapplication;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -23,6 +25,7 @@ public class AdminNewOrdersActivity extends AppCompatActivity {
 
     private RecyclerView rvOrdersList;
     private DatabaseReference ordersRef;
+    //private DatabaseReference cartListRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +72,34 @@ public class AdminNewOrdersActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
                 });
+
+                //whenever the user click on one of the orders of the users on this ordersList
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        CharSequence options[] = new CharSequence[]{"Yes","No"};
+
+                        AlertDialog.Builder builder = new AlertDialog.Builder(AdminNewOrdersActivity.this);
+                        builder.setTitle("Have you Shipped this order products ?");
+                        builder.setItems(options, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int i) {
+
+                                if( i == 0){
+                                    //for yes
+                                    //whenever the user clicks on Yes then we gonna remove that order from database from Orders node
+                                    String uID = getRef(position).getKey();
+                                    removeOrder(uID);
+
+                                }else{
+                                    //for no
+                                    finish();
+                                }
+                            }
+                        });
+                        builder.show();
+                    }
+                });
             }
 
             @NonNull
@@ -81,6 +112,7 @@ public class AdminNewOrdersActivity extends AppCompatActivity {
         rvOrdersList.setAdapter(adapter);
         adapter.startListening();
     }
+
 
 
     // here we are making the static class in the same Activity for FireBaseRecyclerOptions
@@ -104,6 +136,13 @@ public class AdminNewOrdersActivity extends AppCompatActivity {
 
         }
     }
+
+
+    private void removeOrder(String uID) {
+            ordersRef.child(uID).removeValue();
+            // in this we can also have to fix that admin view After Admin ship that object to the customer
+    }
+
 }
 
 
