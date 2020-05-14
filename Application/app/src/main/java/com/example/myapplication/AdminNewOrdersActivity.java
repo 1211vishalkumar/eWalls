@@ -34,7 +34,7 @@ public class AdminNewOrdersActivity extends AppCompatActivity {
 
         ordersRef = FirebaseDatabase.getInstance().getReference().child("Orders");
 
-        cartListRef = FirebaseDatabase.getInstance().getReference().child("Cart List");
+        cartListRef = FirebaseDatabase.getInstance().getReference().child("Cart List");  //  <-
 
         rvOrdersList = findViewById(R.id.rvOrdersList);
         rvOrdersList.setLayoutManager(new LinearLayoutManager(this));
@@ -142,7 +142,7 @@ public class AdminNewOrdersActivity extends AppCompatActivity {
 
     private void removeOrder(String uID) {
             ordersRef.child(uID).removeValue();
-            cartListRef.child("Admin View").child(uID).removeValue();
+            cartListRef.child("Admin View").child(uID).removeValue(); //               <-
             // in this we can also have to fix that admin view After Admin ship that object to the customer
     }
 

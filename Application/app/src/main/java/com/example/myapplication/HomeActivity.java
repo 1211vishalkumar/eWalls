@@ -204,9 +204,18 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         }else if( id == R.id.nav_orders){
 
+
+
         }else if( id == R.id.nav_categories){
 
-        }else if( id == R.id.nav_logout){
+
+
+        }else if(id == R.id.nav_search){
+
+            Intent intent = new Intent(HomeActivity.this,SearchProductsActivity.class);
+            startActivity(intent);
+        }
+        else if( id == R.id.nav_logout){
             Paper.book().destroy();
 
             Intent intent = new Intent(HomeActivity.this,MainActivity.class);
