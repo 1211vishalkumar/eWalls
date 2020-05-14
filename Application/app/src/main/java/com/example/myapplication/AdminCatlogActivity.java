@@ -12,7 +12,7 @@ public class AdminCatlogActivity extends AppCompatActivity {
     private ImageView ivSketches,ivScenery,ivAbstractArt,ivMadhubaniArt;
     private ImageView ivGlass,ivMicron,ivCubism,ivIllustration;
     private ImageView ivModernArt,ivPopArt,ivGeometric,ivSpiritual;
-    private Button btnAdminSignOut,btnCheckOrders;
+    private Button btnAdminSignOut,btnCheckOrders,btnAdminMaintainProducts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,16 @@ public class AdminCatlogActivity extends AppCompatActivity {
 
         btnAdminSignOut = findViewById(R.id.btnAdminSignOut);
         btnCheckOrders = findViewById(R.id.btnCheckOrders);
+        btnAdminMaintainProducts = findViewById(R.id.btnAdminMaintainProducts);
+
+        btnAdminMaintainProducts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminCatlogActivity.this,HomeActivity.class);
+                intent.putExtra("Admin","Admin");
+                startActivity(intent);
+            }
+        });
 
         btnAdminSignOut.setOnClickListener(new View.OnClickListener() {
             @Override

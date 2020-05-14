@@ -43,10 +43,20 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
 
+    private String type = ""; // to receive the inten tfrom the AdminCatlog Activity
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        if(bundle != null){
+            // only in this cse we gonna receive the intent
+            // receiving the intent from Admin
+            type = getIntent().getExtras().get("Admin").toString();
+        }
 
         productRef = FirebaseDatabase.getInstance().getReference().child("Products");
 
@@ -60,9 +70,15 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // here we gonna send the user to the cart Activity
-                Intent intent = new Intent(HomeActivity.this,CartActivity.class);
-                startActivity(intent);
+
+                if(!type.equals("Admin")){
+                    // only for the user
+                    // here we gonna send the user to the cart Activity
+                    Intent intent = new Intent(HomeActivity.this,CartActivity.class);
+                    startActivity(intent);
+                }
+
+
 
             }
         });
@@ -86,8 +102,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         TextView tvUserProfileName = headerView.findViewById(R.id.tvUserProfileName);
         CircleImageView userProfileImage = headerView.findViewById(R.id.userProfileImage);
 
-        tvUserProfileName.setText(Prevalent.currentOnlineUser.getName());
-        Picasso.get().load(Prevalent.currentOnlineUser.getImage()).placeholder(R.drawable.profile).into(userProfileImage);
+        if(!type.equals("Admin")){
+            // only for the user we gonna display it
+            tvUserProfileName.setText(Prevalent.currentOnlineUser.getName());
+            Picasso.get().load(Prevalent.currentOnlineUser.getImage()).placeholder(R.drawable.profile).into(userProfileImage);
+        }
 
         recyclerView = findViewById(R.id.rvMenu);
         recyclerView.setHasFixedSize(true);
@@ -130,9 +149,23 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                         holder.itemView.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                Intent intent = new Intent(HomeActivity.this,ProductDetailsActivity.class);
-                                intent.putExtra("pid",model.getPid());
-                                startActivity(intent);
+
+                                // allowing the admin to go to Product Detail Activity
+                                if(type.equals("Admin")){
+                                    // for the Admin
+                                    Intent intent = new Intent(HomeActivity.this,AdminMaintainProductsActivity.class);
+                                    intent.putExtra("pid",model.getPid());
+                                    startActivity(intent);
+
+
+                                }else {
+                                    // for the user
+                                    Intent intent = new Intent(HomeActivity.this,ProductDetailsActivity.class);
+                                    intent.putExtra("pid",model.getPid());
+                                    startActivity(intent);
+                                }
+
+
                             }
                         });
 
@@ -196,11 +229,25 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         if(id == R.id.nav_cart){
-            Intent intent = new Intent(HomeActivity.this,CartActivity.class);
-            startActivity(intent);
+
+            // this restrict the Admin to use the features of the user
+            if(!type.equals("Admin")){
+                // only for the user
+                // here we gonna send the user to the cart Activity
+                Intent intent = new Intent(HomeActivity.this,CartActivity.class);
+                startActivity(intent);
+            }
+
         }else if( id == R.id.nav_settings){
-            Intent intent = new Intent(HomeActivity.this,SettingActivity.class);
-            startActivity(intent);
+
+            if(!type.equals("Admin")){
+                // only for the user
+                Intent intent = new Intent(HomeActivity.this,SettingActivity.class);
+                startActivity(intent);
+            }
+
+
+
 
         }else if( id == R.id.nav_orders){
 
@@ -212,16 +259,26 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         }else if(id == R.id.nav_search){
 
-            Intent intent = new Intent(HomeActivity.this,SearchProductsActivity.class);
-            startActivity(intent);
+            if(!type.equals("Admin")){
+                // only for the user
+                Intent intent = new Intent(HomeActivity.this,SearchProductsActivity.class);
+                startActivity(intent);
+            }
+
+
+
         }
         else if( id == R.id.nav_logout){
-            Paper.book().destroy();
 
-            Intent intent = new Intent(HomeActivity.this,MainActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
-            finish();
+            if(!type.equals("Admin")){
+                Paper.book().destroy();
+
+                Intent intent = new Intent(HomeActivity.this,MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                finish();
+            }
+
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

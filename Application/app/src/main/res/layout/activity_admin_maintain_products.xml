@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+    android:layout_marginStart="15dp"
+    android:layout_marginEnd="15dp"
+    app:cardElevation="16dp"
+    app:cardCornerRadius="8dp"
+    tools:context=".AdminMaintainProductsActivity">
+
+    <RelativeLayout
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+
+            android:padding="10dp"
+            android:background="@drawable/input_design"
+            android:layout_margin="4dp"
+            android:textColor="@android:color/black"
+            android:hint="Product Name"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:id="@+id/edProdNameAdminMaintain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:layout_margin="2dp"
+            android:layout_below="@+id/edProdNameAdminMaintain"
+            android:layout_marginTop="2dp"
+            android:id="@+id/ivProdImageAdminMaintain"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+
+        <EditText
+            android:padding="10dp"
+            android:background="@drawable/input_design"
+            android:layout_margin="4dp"
+            android:textColor="@android:color/black"
+            android:layout_below="@id/ivProdImageAdminMaintain"
+            android:hint="Product Description"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:id="@+id/edProdDescriptionAdminMaintain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:padding="10dp"
+            android:background="@drawable/input_design"
+            android:layout_margin="4dp"
+            android:textColor="@android:color/black"
+            android:layout_below="@id/edProdDescriptionAdminMaintain"
+            android:hint="Product Price"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:id="@+id/edProdPriceAdminMaintain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:layout_below="@+id/edProdPriceAdminMaintain"
+            android:id="@+id/btnApplyChangeMaintainAdmin"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            android:text="Apply Changes"
+            android:background="@drawable/buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
