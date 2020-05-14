@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import com.example.myapplication.HomeActivity;
+import com.example.myapplication.MainActivity;
+import com.example.myapplication.R;
 
 public class AdminCatlogActivity extends AppCompatActivity {
     private ImageView ivSketches,ivScenery,ivAbstractArt,ivMadhubaniArt;
@@ -42,7 +46,7 @@ public class AdminCatlogActivity extends AppCompatActivity {
         btnAdminMaintainProducts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminCatlogActivity.this,HomeActivity.class);
+                Intent intent = new Intent(AdminCatlogActivity.this, HomeActivity.class);
                 intent.putExtra("Admin","Admin");
                 startActivity(intent);
             }
@@ -51,7 +55,7 @@ public class AdminCatlogActivity extends AppCompatActivity {
         btnAdminSignOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminCatlogActivity.this,MainActivity.class);
+                Intent intent = new Intent(AdminCatlogActivity.this, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
                 finish();
@@ -61,7 +65,7 @@ public class AdminCatlogActivity extends AppCompatActivity {
         btnCheckOrders.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminCatlogActivity.this,AdminNewOrdersActivity.class);
+                Intent intent = new Intent(AdminCatlogActivity.this, AdminNewOrdersActivity.class);
                 startActivity(intent);
 
             }
@@ -71,7 +75,7 @@ public class AdminCatlogActivity extends AppCompatActivity {
         ivSketches.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminCatlogActivity.this,AdminAddingNewProductActivity.class);
+                Intent intent = new Intent(AdminCatlogActivity.this, AdminAddingNewProductActivity.class);
                 intent.putExtra("category","sketches");
                 startActivity(intent);
             }

@@ -113,6 +113,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+    <Button
+        android:textColorHint="@android:color/black"
+        android:padding="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:background="@drawable/buttons"
+        android:layout_margin="15dp"
+        android:text="set Security Questions"
+        android:id="@+id/btnSettingsSecurityQuestions"
+        android:layout_below="@+id/edSettingAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
 
 
 </RelativeLayout>

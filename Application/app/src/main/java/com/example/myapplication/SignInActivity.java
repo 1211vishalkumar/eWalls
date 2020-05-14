@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.myapplication.Admin.AdminCatlogActivity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -31,7 +32,7 @@ public class SignInActivity extends AppCompatActivity {
     private ProgressDialog loadingBar;
     private String parentDbName = "Users";
     private CheckBox chkBoxRememberMe;
-    private TextView tvAdminPanel,tvNotAdminPanel;
+    private TextView tvAdminPanel,tvNotAdminPanel,tvForgetPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,10 +48,19 @@ public class SignInActivity extends AppCompatActivity {
 
         tvAdminPanel = findViewById(R.id.tvAdminPanel);
         tvNotAdminPanel = findViewById(R.id.tvNotAdminPanel);
-
+        tvForgetPassword = findViewById(R.id.tvForgetPassword);
 
         chkBoxRememberMe =(CheckBox) findViewById(R.id.chkBoxRememberMe);
         Paper.init(this); // initializing the paper db
+
+        tvForgetPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SignInActivity.this,ResetPasswordActivity.class);
+                intent.putExtra("check","signIn");
+                startActivity(intent);
+            }
+        });
 
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,6 +95,8 @@ public class SignInActivity extends AppCompatActivity {
                 parentDbName = "Users";
             }
         });
+
+
     }
 
     private void signInUser() {
@@ -146,7 +158,7 @@ public class SignInActivity extends AppCompatActivity {
                                 loadingBar.dismiss();
 
                                 // now sending the user to homeActivity
-                                Intent intent = new Intent(SignInActivity.this,AdminCatlogActivity.class);
+                                Intent intent = new Intent(SignInActivity.this, AdminCatlogActivity.class);
                                 startActivity(intent);
                             }else if(parentDbName.equals("Users")){
                                 // then we gonna allow the user to access to its account

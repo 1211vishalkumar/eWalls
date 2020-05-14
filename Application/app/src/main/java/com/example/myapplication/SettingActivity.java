@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,6 +36,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class SettingActivity extends AppCompatActivity {
 
+    private Button btnSettingsSecurityQuestions;
     CircleImageView settingProfileImage;
     EditText edSettingsPhoneNo,edSettingsFullName,edSettingAddress;
     TextView tvProfileImageChange,tvCloseSettings,tvUpdateSettings;
@@ -62,6 +64,15 @@ public class SettingActivity extends AppCompatActivity {
         tvCloseSettings = findViewById(R.id.tvCloseSettings);
         tvUpdateSettings = findViewById(R.id.tvUpdateSettings);
 
+        btnSettingsSecurityQuestions = findViewById(R.id.btnSettingsSecurityQuestions);
+        btnSettingsSecurityQuestions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SettingActivity.this,ResetPasswordActivity.class);
+                intent.putExtra("check","settings");
+                startActivity(intent);
+            }
+        });
 
 
         userInfoDisplay(settingProfileImage,edSettingsFullName,edSettingsPhoneNo,edSettingAddress);

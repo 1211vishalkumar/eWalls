@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Admin;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.myapplication.R;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -229,7 +230,7 @@ public class AdminAddingNewProductActivity extends AppCompatActivity {
                             // once the product is added successfully we can send the admin to  AdminCatlogActivity
                             // where admin can add more products if admin wants
 
-                            Intent intent = new Intent(AdminAddingNewProductActivity.this,AdminCatlogActivity.class);
+                            Intent intent = new Intent(AdminAddingNewProductActivity.this, AdminCatlogActivity.class);
                             startActivity(intent);
 
                             loadingBar.dismiss();

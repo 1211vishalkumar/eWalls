@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EFEF2F"
-    tools:context=".AdminAddingNewProductActivity">
+    tools:context=".Admin.AdminAddingNewProductActivity">
 
     <ImageView
         android:layout_marginTop="10dp"

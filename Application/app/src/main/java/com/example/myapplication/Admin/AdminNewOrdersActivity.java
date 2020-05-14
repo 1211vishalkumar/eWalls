@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Admin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.myapplication.Model.AdminOrders;
+import com.example.myapplication.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
@@ -69,7 +70,7 @@ public class AdminNewOrdersActivity extends AppCompatActivity {
                         String uID = getRef(position).getKey();
 
                         // now we send the intent to AdminUserProductsActivity
-                        Intent intent = new Intent(AdminNewOrdersActivity.this,AdminUserProductsActivity.class);
+                        Intent intent = new Intent(AdminNewOrdersActivity.this, AdminUserProductsActivity.class);
                         intent.putExtra("uid",uID);
                         startActivity(intent);
                     }
