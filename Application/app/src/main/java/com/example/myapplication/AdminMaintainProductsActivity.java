@@ -27,11 +27,11 @@ import java.util.HashMap;
 public class AdminMaintainProductsActivity extends AppCompatActivity {
 
     private EditText edProdNameAdminMaintain,edProdDescriptionAdminMaintain,edProdPriceAdminMaintain;
-    private Button btnApplyChangeMaintainAdmin;
+    private Button btnApplyChangeMaintainAdmin,btnDeleteProductMaintainAdmin;
     private ImageView ivProdImageAdminMaintain;
     private String productID = "";
     private DatabaseReference productRef ;
-    //private StorageReference productStorageRef;
+    //private StorageReference productStorageRef;  // we should also remove the product from the storage  write by you self
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +49,7 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
         edProdPriceAdminMaintain = findViewById(R.id.edProdPriceAdminMaintain);
 
         btnApplyChangeMaintainAdmin = findViewById(R.id.btnApplyChangeMaintainAdmin);
+        btnDeleteProductMaintainAdmin = findViewById(R.id.btnDeleteProductMaintainAdmin);
 
         ivProdImageAdminMaintain = findViewById(R.id.ivProdImageAdminMaintain);
 
@@ -62,9 +63,30 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
             }
         });
 
+        btnDeleteProductMaintainAdmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //here we gonna create method to dwlete the product
+                deleteThisProduct();
+            }
+        });
 
     }
 
+    private void deleteThisProduct() {
+        productRef.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+
+                Intent intent = new Intent(AdminMaintainProductsActivity.this,AdminCatlogActivity.class);
+                startActivity(intent);
+                finish();
+
+                Toast.makeText(AdminMaintainProductsActivity.this, "This product is deleted Successfully", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+    }
 
 
     private void applyTheChanges() {
