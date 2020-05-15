@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#192335"
-    tools:context=".SignUpActivity">
+    tools:context=".Customer.SignUpActivity">
 
     <ImageView
         android:id="@+id/SignUpAppIcon"

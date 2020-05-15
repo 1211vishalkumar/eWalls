@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#192335"
+    tools:context=".Sellers.SellerRegistrationActivity">
+
+    <ImageView
+        android:scaleType="centerCrop"
+        android:id="@+id/ivSeller"
+        android:src="@drawable/seller"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"/>
+
+    <TextView
+        android:id="@+id/tvTitleSeller"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:padding="4dp"
+        android:background="@drawable/input_design"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/ivSeller"
+        android:gravity="center"
+        android:text="Seller Registration Portal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:textColor="@android:color/white"
+        android:id="@+id/edSellerName"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColorHint="@android:color/darker_gray"
+        android:hint="Enter Your Name"
+        android:textSize="24sp"
+        android:padding="6dp"
+        android:background="@drawable/input_design"
+        android:layout_below="@+id/tvTitleSeller"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/darker_gray"
+        android:id="@+id/edSellerPhoneNo"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:hint="Enter Your PhoneNo"
+        android:textSize="24sp"
+        android:padding="4dp"
+        android:background="@drawable/input_design"
+        android:layout_below="@+id/edSellerName"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/darker_gray"
+        android:id="@+id/edSellerEmail"
+        android:inputType="textEmailAddress"
+        android:textAlignment="center"
+        android:hint="Enter Your Email Address"
+        android:textSize="24sp"
+        android:padding="4dp"
+        android:background="@drawable/input_design"
+        android:layout_below="@+id/edSellerPhoneNo"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/darker_gray"
+        android:id="@+id/edSellerPassword"
+        android:textAlignment="center"
+        android:hint="Enter Your Password"
+        android:textSize="24sp"
+        android:padding="4dp"
+        android:background="@drawable/input_design"
+        android:layout_below="@+id/edSellerEmail"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/darker_gray"
+        android:id="@+id/edSellerAddress"
+        android:textAlignment="center"
+        android:hint="Enter Your Address"
+        android:textSize="24sp"
+        android:padding="4dp"
+        android:background="@drawable/input_design"
+        android:layout_below="@+id/edSellerPassword"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/edSellerAddress"
+        android:id="@+id/btnRegisterSeller"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        android:text="register"
+        android:background="@drawable/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_alignParentBottom="true"
+        android:id="@+id/btnLogInSeller"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        android:text="LogIn"
+        android:background="@drawable/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
+
+
+
+</RelativeLayout>

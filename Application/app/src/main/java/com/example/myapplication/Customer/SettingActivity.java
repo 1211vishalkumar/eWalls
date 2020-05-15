@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Customer;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.myapplication.R;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -68,7 +69,7 @@ public class SettingActivity extends AppCompatActivity {
         btnSettingsSecurityQuestions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SettingActivity.this,ResetPasswordActivity.class);
+                Intent intent = new Intent(SettingActivity.this, ResetPasswordActivity.class);
                 intent.putExtra("check","settings");
                 startActivity(intent);
             }
@@ -127,7 +128,7 @@ public class SettingActivity extends AppCompatActivity {
         ref.child(Prevalent.currentOnlineUser.getPhoneNo()).updateChildren(userMap);
 
 
-        startActivity(new Intent(SettingActivity.this,HomeActivity.class));
+        startActivity(new Intent(SettingActivity.this, HomeActivity.class));
         Toast.makeText(SettingActivity.this, "Profile Info updated Successfully", Toast.LENGTH_SHORT).show();
         finish();
     }

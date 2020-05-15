@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Customer;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.myapplication.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -110,7 +111,7 @@ public class SignUpActivity extends AppCompatActivity {
                                         loadingBar.dismiss();
 
                                         // once the account has been created successfully then send the user to SignActivity to sign into the account
-                                        Intent intent = new Intent(SignUpActivity.this,SignInActivity.class);
+                                        Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
                                         startActivity(intent);
                                     }else{
 
@@ -133,7 +134,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                     // now send the user to the main Activity through intent
 
-                    Intent intent = new Intent(SignUpActivity.this,MainActivity.class);
+                    Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
                     startActivity(intent);
 
 

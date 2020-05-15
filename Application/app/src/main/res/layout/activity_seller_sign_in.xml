@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#192335"
+    tools:context=".Sellers.SellerSignInActivity">
+
+    <ImageView
+        android:scaleType="centerCrop"
+        android:id="@+id/ivSellerSignIn"
+        android:src="@drawable/sellerlogin"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"/>
+
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/tvTitleSellerSignIn"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:padding="4dp"
+        android:background="@drawable/input_design"
+        android:layout_below="@+id/ivSellerSignIn"
+        android:gravity="center"
+        android:text="Seller SignIn Portal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:textColor="@android:color/white"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textColorHint="@android:color/darker_gray"
+        android:id="@+id/edSellerEmailSignIn"
+        android:inputType="textEmailAddress"
+        android:textAlignment="center"
+        android:hint="Enter Your Email Address"
+        android:textSize="24sp"
+        android:padding="4dp"
+        android:background="@drawable/input_design"
+        android:layout_below="@+id/tvTitleSellerSignIn"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/darker_gray"
+        android:id="@+id/edSellerPasswordSignIn"
+        android:textAlignment="center"
+        android:hint="Enter Your Password"
+        android:textSize="24sp"
+        android:padding="4dp"
+        android:background="@drawable/input_design"
+        android:layout_below="@+id/edSellerEmailSignIn"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+
+        android:id="@+id/btnLogInSellerSignIn"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/edSellerPasswordSignIn"
+        android:layout_margin="10dp"
+        android:text="Seller SignIn"
+        android:background="@drawable/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</RelativeLayout>

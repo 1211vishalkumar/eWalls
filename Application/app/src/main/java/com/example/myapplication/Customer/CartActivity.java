@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Customer;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.example.myapplication.Model.Cart;
 import com.example.myapplication.Prevalent.Prevalent;
+import com.example.myapplication.R;
 import com.example.myapplication.ViewHolder.CartViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -60,7 +61,7 @@ public class CartActivity extends AppCompatActivity {
                 //diaplaying the total price on the textView
                 tvTotalPriceCartList.setText("Total Price = "+ String.valueOf(sumTotalPrice));
 
-                Intent intent = new Intent(CartActivity.this,ConfirmFinalOrderActivity.class);
+                Intent intent = new Intent(CartActivity.this, ConfirmFinalOrderActivity.class);
                 intent.putExtra("Total Price", String.valueOf(sumTotalPrice));
                 startActivity(intent);
                 finish();
@@ -116,7 +117,7 @@ public class CartActivity extends AppCompatActivity {
                                     if(i==0){
                                         // i.e if the yser clicks on the edit button
                                         // now we gonna send the user to product detail Activity
-                                        Intent intent = new Intent(CartActivity.this,ProductDetailsActivity.class);
+                                        Intent intent = new Intent(CartActivity.this, ProductDetailsActivity.class);
                                         intent.putExtra("pid",model.getPid());
                                         startActivity(intent);
                                     }
@@ -132,7 +133,7 @@ public class CartActivity extends AppCompatActivity {
                                                         if(task.isSuccessful()){
                                                             Toast.makeText(CartActivity.this, "Item removed from your Cart", Toast.LENGTH_SHORT).show();
 
-                                                            Intent intent = new Intent(CartActivity.this,HomeActivity.class);
+                                                            Intent intent = new Intent(CartActivity.this, HomeActivity.class);
                                                             startActivity(intent);
                                                         }
                                                     }

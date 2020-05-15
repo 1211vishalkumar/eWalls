@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Customer;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,9 +14,9 @@ import android.widget.Toast;
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.example.myapplication.Model.Products;
 import com.example.myapplication.Prevalent.Prevalent;
+import com.example.myapplication.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -123,7 +123,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
                                                 // now we gonna send the toast message to the user
                                                 Toast.makeText(ProductDetailsActivity.this, "Added To Cart List", Toast.LENGTH_SHORT).show();
                                                 // after the product in the cart list now we gonna send the user to the homeActivity
-                                                Intent intent = new Intent(ProductDetailsActivity.this,HomeActivity.class);
+                                                Intent intent = new Intent(ProductDetailsActivity.this, HomeActivity.class);
                                                 startActivity(intent);
                                             }
                                         }

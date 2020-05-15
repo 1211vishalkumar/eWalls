@@ -1,9 +1,8 @@
-package com.example.myapplication;
+package com.example.myapplication.Customer;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -15,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.myapplication.Model.Products;
+import com.example.myapplication.R;
 import com.example.myapplication.ViewHolder.ProductViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -84,7 +84,7 @@ public class SearchProductsActivity extends AppCompatActivity {
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(SearchProductsActivity.this,ProductDetailsActivity.class);
+                        Intent intent = new Intent(SearchProductsActivity.this, ProductDetailsActivity.class);
                         intent.putExtra("pid",model.getPid());
                         startActivity(intent);
                     }

@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Customer;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.myapplication.Admin.AdminCatlogActivity;
+import com.example.myapplication.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -56,7 +57,7 @@ public class SignInActivity extends AppCompatActivity {
         tvForgetPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SignInActivity.this,ResetPasswordActivity.class);
+                Intent intent = new Intent(SignInActivity.this, ResetPasswordActivity.class);
                 intent.putExtra("check","signIn");
                 startActivity(intent);
             }
@@ -166,7 +167,7 @@ public class SignInActivity extends AppCompatActivity {
                                 loadingBar.dismiss();
 
                                 // now sending the user to homeActivity
-                                Intent intent = new Intent(SignInActivity.this,HomeActivity.class);
+                                Intent intent = new Intent(SignInActivity.this, HomeActivity.class);
                                 Prevalent.currentOnlineUser = usersData;
                                 startActivity(intent);
                             }

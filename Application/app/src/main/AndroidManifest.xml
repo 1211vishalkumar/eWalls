@@ -12,24 +12,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ResetPasswordActivity"></activity>
+        <activity
+            android:name=".Sellers.SellerHomepageActivity"
+            android:label="@string/title_activity_seller_homepage"></activity>
+        <activity android:name=".Sellers.SellerSignInActivity" />
+        <activity android:name=".Sellers.SellerRegistrationActivity" />
+        <activity android:name=".Customer.ResetPasswordActivity" />
         <activity android:name=".Admin.AdminMaintainProductsActivity" />
-        <activity android:name=".SearchProductsActivity" />
+        <activity android:name=".Customer.SearchProductsActivity" />
         <activity android:name=".Admin.AdminUserProductsActivity" />
         <activity android:name=".Admin.AdminNewOrdersActivity" />
-        <activity android:name=".ConfirmFinalOrderActivity" />
-        <activity android:name=".CartActivity" />
-        <activity android:name=".ProductDetailsActivity" />
-        <activity android:name=".SettingActivity" />
+        <activity android:name=".Customer.ConfirmFinalOrderActivity" />
+        <activity android:name=".Customer.CartActivity" />
+        <activity android:name=".Customer.ProductDetailsActivity" />
+        <activity android:name=".Customer.SettingActivity" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".Customer.HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Admin.AdminCatlogActivity" />
         <activity android:name=".Admin.AdminAddingNewProductActivity" />
-        <activity android:name=".SignInActivity" />
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Customer.SignInActivity" />
+        <activity android:name=".Customer.SignUpActivity" />
+        <activity android:name=".Customer.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

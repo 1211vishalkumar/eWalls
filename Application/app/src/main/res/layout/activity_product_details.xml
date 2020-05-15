@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EFEF3A"
-    tools:context=".ProductDetailsActivity">
+    tools:context=".Customer.ProductDetailsActivity">
 
     <ImageView
         android:background="@drawable/input_design"

@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Customer;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.myapplication.Prevalent.Prevalent;
+import com.example.myapplication.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
@@ -111,7 +112,7 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity {
                                     // here we gonna nofify the user that order is placed successfully
                                     if(task.isSuccessful()){
                                         Toast.makeText(ConfirmFinalOrderActivity.this, "Your order has been Placed Successfully", Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(ConfirmFinalOrderActivity.this,HomeActivity.class);
+                                        Intent intent = new Intent(ConfirmFinalOrderActivity.this, HomeActivity.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                         startActivity(intent);
                                         finish();

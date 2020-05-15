@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Customer;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.myapplication.Prevalent.Prevalent;
+import com.example.myapplication.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -128,7 +129,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
                                 // now we goona tell the user that security questions set successfully
                                 Toast.makeText(ResetPasswordActivity.this, "Security questions saved successfully", Toast.LENGTH_SHORT).show();
 
-                                Intent intent = new Intent(ResetPasswordActivity.this,HomeActivity.class);
+                                Intent intent = new Intent(ResetPasswordActivity.this, HomeActivity.class);
                                 startActivity(intent);
                             }
                         }
@@ -221,7 +222,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
                                                             if(task.isSuccessful()){
                                                                 Toast.makeText(ResetPasswordActivity.this, "Password changed successfully", Toast.LENGTH_SHORT).show();
 
-                                                                Intent intent = new Intent(ResetPasswordActivity.this,SignInActivity.class);
+                                                                Intent intent = new Intent(ResetPasswordActivity.this, SignInActivity.class);
                                                                 startActivity(intent);
                                                             }
                                                         }

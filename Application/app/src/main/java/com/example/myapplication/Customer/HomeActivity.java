@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Customer;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.myapplication.Admin.AdminMaintainProductsActivity;
+import com.example.myapplication.R;
 import com.example.myapplication.ViewHolder.ProductViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -73,7 +74,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 if(!type.equals("Admin")){
                     // only for the user
                     // here we gonna send the user to the cart Activity
-                    Intent intent = new Intent(HomeActivity.this,CartActivity.class);
+                    Intent intent = new Intent(HomeActivity.this, CartActivity.class);
                     startActivity(intent);
                 }
 
@@ -159,7 +160,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
                                 }else {
                                     // for the user
-                                    Intent intent = new Intent(HomeActivity.this,ProductDetailsActivity.class);
+                                    Intent intent = new Intent(HomeActivity.this, ProductDetailsActivity.class);
                                     intent.putExtra("pid",model.getPid());
                                     startActivity(intent);
                                 }
@@ -241,7 +242,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
             if(!type.equals("Admin")){
                 // only for the user
-                Intent intent = new Intent(HomeActivity.this,SettingActivity.class);
+                Intent intent = new Intent(HomeActivity.this, SettingActivity.class);
                 startActivity(intent);
             }
 
@@ -260,7 +261,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
             if(!type.equals("Admin")){
                 // only for the user
-                Intent intent = new Intent(HomeActivity.this,SearchProductsActivity.class);
+                Intent intent = new Intent(HomeActivity.this, SearchProductsActivity.class);
                 startActivity(intent);
             }
 
@@ -272,7 +273,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             if(!type.equals("Admin")){
                 Paper.book().destroy();
 
-                Intent intent = new Intent(HomeActivity.this,MainActivity.class);
+                Intent intent = new Intent(HomeActivity.this, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
                 finish();
