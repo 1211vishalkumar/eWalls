@@ -1,8 +1,10 @@
 package com.example.myapplication;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -80,8 +82,19 @@ public class ResetPasswordActivity extends AppCompatActivity {
 
             edPhoneNoResetActivity.setVisibility(View.VISIBLE);
 
+            btnVerifyResetPassword.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    // here we gonna create a method to verify the user
+                    verifyUser();
+                }
+            });
+
         }
     }
+
+
 
     private void setAnswers(){
         // here the user will anwer question1 and q 2
@@ -150,4 +163,111 @@ public class ResetPasswordActivity extends AppCompatActivity {
         });
 
     }
+
+
+    private void verifyUser() {
+
+        final String phone = edPhoneNoResetActivity.getText().toString();
+        final String answer1 = edQuestionResetPassword1.getText().toString().toLowerCase();
+        final String answer2 = edQuestionResetPassword2.getText().toString().toLowerCase();
+
+        if(!phone.equals("") && !answer1.equals("") && !answer2.equals("")){
+
+            // now we gonna verfy the phone no ans and the 2 answers
+            //ref
+            final DatabaseReference ref = FirebaseDatabase.getInstance().getReference()
+                    .child("Users")
+                    .child(phone);
+
+            ref.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                    if(dataSnapshot.exists()){
+                        // now we gonna retrive the phone no which inside the database
+                        String mPhone = dataSnapshot.child("phoneNo").getValue().toString();
+
+                        // now we gonna check whether the user has already set the security questions or not
+                        if(dataSnapshot.hasChild("Security Questions")){
+                            //  now we gonna retrive both the answers
+                            String ans1 = dataSnapshot.child("Security Questions").child("answer1").getValue().toString();
+                            String ans2 = dataSnapshot.child("Security Questions").child("answer2").getValue().toString();
+
+                            if(!ans1.equals(answer1)){
+                                Toast.makeText(ResetPasswordActivity.this, "Your Answer to this Q.1 is incorrect ", Toast.LENGTH_SHORT).show();
+                            }
+                            else if(!ans2.equals(answer2)){
+                                Toast.makeText(ResetPasswordActivity.this, "Your Answer to this Q.2 is incorrect", Toast.LENGTH_SHORT).show();
+                            }
+                            else{
+                                // now we gonna allow the user to change the password
+                                AlertDialog.Builder builder = new AlertDialog.Builder(ResetPasswordActivity.this,R.style.Theme_AppCompat_DayNight_Dialog_Alert);
+                                builder.setTitle(" New password");
+
+                                final EditText newPassword = new EditText(ResetPasswordActivity.this);
+                                newPassword.setHint("Write new Password here");
+                                builder.setView(newPassword);
+
+                                // now we need 2 button
+                                builder.setPositiveButton("Change", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int i) {
+
+                                        if(!newPassword.getText().toString().equals("")){
+                                            ref.child("password").setValue(newPassword.getText().toString())
+                                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                        @Override
+                                                        public void onComplete(@NonNull Task<Void> task) {
+                                                            if(task.isSuccessful()){
+                                                                Toast.makeText(ResetPasswordActivity.this, "Password changed successfully", Toast.LENGTH_SHORT).show();
+
+                                                                Intent intent = new Intent(ResetPasswordActivity.this,SignInActivity.class);
+                                                                startActivity(intent);
+                                                            }
+                                                        }
+                                                    });
+                                        }
+                                    }
+                                });
+
+                                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int i) {
+
+                                        dialog.cancel();
+
+                                        Intent intent = new Intent(ResetPasswordActivity.this,SignInActivity.class);
+                                        startActivity(intent);
+                                    }
+                                });
+
+                                builder.show();
+
+                            }
+
+
+                        }
+                        else{
+
+                            Toast.makeText(ResetPasswordActivity.this, "You have not set the security question. please contact us", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                    else {
+                        Toast.makeText(ResetPasswordActivity.this, "This Phone is not registered", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+        }
+        else{
+
+            Toast.makeText(this, "Please Complete the form", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
 }
