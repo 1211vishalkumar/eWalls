@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#121725"
     tools:context=".Customer.ConfirmFinalOrderActivity">
 
     <TextView
@@ -20,6 +21,7 @@
         android:layout_height="wrap_content"/>
 
     <EditText
+        android:textColor="@android:color/white"
         android:id="@+id/edShipmentName"
         android:padding="10dp"
         android:background="@drawable/input_design"
@@ -31,6 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <EditText
+        android:textColor="@android:color/white"
         android:inputType="number"
         android:id="@+id/edShipmentPhoneNo"
         android:padding="10dp"
@@ -44,6 +47,7 @@
         android:layout_height="wrap_content"/>
 
     <EditText
+        android:textColor="@android:color/white"
         android:id="@+id/edShipmentAddress"
         android:padding="10dp"
         android:background="@drawable/input_design"
@@ -56,6 +60,7 @@
         android:layout_height="wrap_content"/>
 
     <EditText
+        android:textColor="@android:color/white"
         android:id="@+id/edShipmentCity"
         android:padding="10dp"
         android:background="@drawable/input_design"

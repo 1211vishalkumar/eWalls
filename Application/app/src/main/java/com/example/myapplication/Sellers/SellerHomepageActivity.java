@@ -12,11 +12,6 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 // in this we gonna show all the products of this specific seller
 public class SellerHomepageActivity extends AppCompatActivity {
@@ -25,6 +20,7 @@ public class SellerHomepageActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seller_homepage);
 
@@ -49,13 +45,12 @@ public class SellerHomepageActivity extends AppCompatActivity {
 
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    Intent intent1 = new Intent(SellerHomepageActivity.this, MainActivity.class);
-                    startActivity(intent1);
+                    mTextView.setText(R.string.title_home);
                     return true;
 
                 case R.id.navigation_add:
-                    Intent intent2 = new Intent(SellerHomepageActivity.this, MainActivity.class);
-                    startActivity(intent2);
+                    Intent intentCat = new Intent(SellerHomepageActivity.this, SellerProductCatlogActivity.class);
+                    startActivity(intentCat);
                     return true;
 
                 /*case R.id.navigation_notifications:
@@ -67,9 +62,9 @@ public class SellerHomepageActivity extends AppCompatActivity {
                     mAuth = FirebaseAuth.getInstance();
                     mAuth.signOut();
 
-                    Intent intent = new Intent(SellerHomepageActivity.this, MainActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    startActivity(intent);
+                    Intent intentMain = new Intent(SellerHomepageActivity.this, MainActivity.class);
+                    intentMain.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intentMain);
                     finish();
                     return true;
             }

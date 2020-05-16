@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EFEF2F"
-    tools:context=".Admin.AdminCatlogActivity">
+    android:background="#121725"
+    tools:context=".Sellers.SellerProductCatlogActivity">
 
     <TextView
+        android:textColor="@android:color/white"
         android:background="@drawable/input_design"
         android:id="@+id/tvCatlog"
         android:layout_alignParentTop="true"
@@ -22,11 +23,12 @@
         android:layout_height="wrap_content"/>
 
     <LinearLayout
+
         android:id="@+id/linearLayoutCatlog1"
         android:orientation="horizontal"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="50dp"
         android:layout_below="@+id/tvCatlog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -138,52 +140,7 @@
 
     </LinearLayout>
 
-    <Button
-        android:layout_above="@+id/btnCheckOrders"
-        android:layout_marginBottom="15dp"
-        android:textAllCaps="false"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"
-        android:text="Maintain Products"
-        android:id="@+id/btnAdminMaintainProducts"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@drawable/buttons"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
 
-
-
-    <Button
-
-        android:textAllCaps="false"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"
-        android:text="Check New Orders"
-        android:layout_marginBottom="15dp"
-        android:id="@+id/btnCheckOrders"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_above="@+id/btnAdminSignOut"
-        android:background="@drawable/buttons"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <Button
-        android:layout_marginBottom="15dp"
-        android:textAllCaps="false"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"
-        android:text="Sign Out"
-        android:id="@+id/btnAdminSignOut"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/buttons"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
 
 
 

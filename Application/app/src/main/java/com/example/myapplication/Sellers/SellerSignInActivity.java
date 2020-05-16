@@ -74,7 +74,6 @@ public class SellerSignInActivity extends AppCompatActivity {
                             }
                             else{
                                 loadingBar.dismiss();
-
                                 Toast.makeText(SellerSignInActivity.this, "Enter the correct credentials", Toast.LENGTH_SHORT).show();
                             }
                         }

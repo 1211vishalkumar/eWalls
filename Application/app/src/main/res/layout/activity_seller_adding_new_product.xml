@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EFEF2F"
-    tools:context=".Admin.AdminAddingNewProductActivity">
+    android:background="#121725"
+    tools:context=".Sellers.SellerAddingNewProductActivity">
 
     <ImageView
         android:layout_marginTop="10dp"
@@ -17,12 +17,13 @@
         android:layout_width="350dp"
         android:layout_height="350dp"/>
     <EditText
+        android:textColor="@android:color/white"
         android:layout_marginTop="20dp"
         android:padding="20dp"
         android:background="@drawable/input_design"
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
-        android:textColorHint="@android:color/black"
+        android:textColorHint="@android:color/white"
         android:hint="Product product name.."
         android:inputType="textMultiLine"
         android:layout_below="@+id/ivSelectProductImage"
@@ -30,12 +31,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <EditText
+        android:textColor="@android:color/white"
         android:layout_marginTop="6dp"
         android:padding="20dp"
         android:background="@drawable/input_design"
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
-        android:textColorHint="@android:color/black"
+        android:textColorHint="@android:color/white"
         android:hint="Product  Description"
         android:inputType="textMultiLine"
         android:layout_below="@+id/edProductName"
@@ -43,12 +45,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <EditText
+        android:textColor="@android:color/white"
         android:layout_marginTop="6dp"
         android:padding="20dp"
         android:background="@drawable/input_design"
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
-        android:textColorHint="@android:color/black"
+        android:textColorHint="@android:color/white"
         android:hint="Product  Price"
         android:inputType="textMultiLine"
         android:layout_below="@+id/edProductDescription"

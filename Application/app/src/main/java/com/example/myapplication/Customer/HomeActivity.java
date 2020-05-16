@@ -133,7 +133,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         // adding query to retrive all the products
         FirebaseRecyclerOptions<Products> options = new  FirebaseRecyclerOptions.Builder <Products>()
-                .setQuery(productRef,Products.class).build();
+                .setQuery(productRef.orderByChild("productStatus").equalTo("Approved"),Products.class).build();
 
         FirebaseRecyclerAdapter<Products, ProductViewHolder> adapter =
                 new FirebaseRecyclerAdapter<Products, ProductViewHolder>(options) {

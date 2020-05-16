@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EFEF3A"
+    android:background="#121725"
     tools:context=".Customer.ProductDetailsActivity">
 
     <ImageView
@@ -23,7 +23,7 @@
         android:padding="3dp"
         android:layout_marginTop="10dp"
         android:gravity="center"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textSize="17sp"
         android:textStyle="bold"
         android:text="Product Name"
@@ -39,7 +39,7 @@
         android:padding="3dp"
         android:layout_marginTop="10dp"
         android:gravity="center"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textSize="20sp"
         android:textStyle="bold"
         android:text="Product Description"
@@ -54,7 +54,7 @@
         android:padding="3dp"
         android:layout_marginTop="10dp"
         android:gravity="center"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textSize="20sp"
         android:textStyle="bold"
         android:text="Product Price"

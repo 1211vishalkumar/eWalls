@@ -5,31 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#121725"
-    tools:context=".Admin.AdminUserProductsActivity">
+    tools:context=".Admin.CheckAdminNewProductsActivity">
 
     <RelativeLayout
-        android:id="@+id/rlAdminUserProducts"
+        android:id="@+id/rlAdminCheckProducts"
         android:layout_alignParentTop="true"
         android:background="@color/colorAccent"
         android:layout_width="match_parent"
         android:layout_height="50dp">
 
         <TextView
+            android:id="@+id/tvAdminCheckProducts"
             android:textStyle="bold"
             android:layout_marginTop="10dp"
             android:textAlignment="center"
             android:textSize="25sp"
             android:textColor="@android:color/black"
-            android:text="Products"
+            android:text="Approve New Products"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvProductsList"
-        android:layout_below="@+id/rlAdminUserProducts"
-        android:layout_margin="8dp"
+        android:id="@+id/rvAdminCheckProductsList"
+        android:layout_margin="3dp"
+        android:layout_below="@+id/rlAdminCheckProducts"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#121725"
     tools:context=".Customer.SearchProductsActivity">
 
     <LinearLayout
@@ -17,6 +18,7 @@
 
 
         <EditText
+            android:textColor="@android:color/white"
             android:layout_weight="3"
             android:layout_marginStart="3dp"
             android:textAlignment="center"
@@ -25,7 +27,7 @@
             android:textSize="18sp"
             android:background="@drawable/input_design"
             android:id="@+id/edSearchProductName"
-            android:textColorHint="@android:color/black"
+            android:textColorHint="@android:color/white"
             android:hint="Enter Product Name"
             android:layout_width="0dp"
             android:layout_height="match_parent"/>

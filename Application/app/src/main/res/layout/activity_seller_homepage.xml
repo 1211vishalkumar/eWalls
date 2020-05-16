@@ -6,9 +6,37 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="?attr/actionBarSize"
+    android:background="#121725"
     tools:context=".Sellers.SellerHomepageActivity">
 
+    <RelativeLayout
+
+        android:id="@+id/rlSellerHome"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:id="@+id/tvSellerHomeTitle"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:textColor="@android:color/black"
+            android:text="New Orders"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/rlSellerHome"
+        android:id="@+id/rvSellerHomepage"
+        android:layout_margin="3dp"
+        android:layout_above="@+id/nav_view_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

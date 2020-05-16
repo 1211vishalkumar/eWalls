@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.myapplication.R;
+import com.example.myapplication.Sellers.SellerProductCatlogActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -77,7 +78,7 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
 
-                Intent intent = new Intent(AdminMaintainProductsActivity.this, AdminCatlogActivity.class);
+                Intent intent = new Intent(AdminMaintainProductsActivity.this, SellerProductCatlogActivity.class);
                 startActivity(intent);
                 finish();
 
@@ -118,8 +119,8 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
                     //here we gonna notify the Admin
                     if(task.isSuccessful()){
                         Toast.makeText(AdminMaintainProductsActivity.this, "Changes Applied Successfully", Toast.LENGTH_SHORT).show();
-                        // now we have to send the admin to AdminCatlogActivity
-                        Intent intent = new Intent(AdminMaintainProductsActivity.this,AdminCatlogActivity.class);
+                        // now we have to send the admin to SellerProductCatlogActivity
+                        Intent intent = new Intent(AdminMaintainProductsActivity.this, SellerProductCatlogActivity.class);
                         startActivity(intent);
                         finish();
                     }

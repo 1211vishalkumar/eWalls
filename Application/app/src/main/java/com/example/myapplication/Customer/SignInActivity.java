@@ -14,7 +14,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.myapplication.Admin.AdminCatlogActivity;
+import com.example.myapplication.Admin.AdminHomeActivity;
+import com.example.myapplication.Admin.AdminNewOrdersActivity;
+import com.example.myapplication.Sellers.SellerProductCatlogActivity;
 import com.example.myapplication.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -159,7 +161,7 @@ public class SignInActivity extends AppCompatActivity {
                                 loadingBar.dismiss();
 
                                 // now sending the user to homeActivity
-                                Intent intent = new Intent(SignInActivity.this, AdminCatlogActivity.class);
+                                Intent intent = new Intent(SignInActivity.this, AdminHomeActivity.class);
                                 startActivity(intent);
                             }else if(parentDbName.equals("Users")){
                                 // then we gonna allow the user to access to its account
