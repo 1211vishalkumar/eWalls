@@ -1,7 +1,7 @@
 package com.example.myapplication.Model;
 
 public class Products {
-    private String pname,price,description,image,category,pid,date,time;
+    private String pname,price,description,image,category,pid,date,time,productStatus,sellerAddress,sellerEmail,sellerID,sellerName,sellerPhone;
 
     //adding default constructor
     public Products(){
@@ -10,7 +10,7 @@ public class Products {
 
     //parameterized constructor
 
-    public Products(String pname, String price, String description, String image, String category, String pid, String date, String time) {
+    public Products(String pname, String price, String description, String image, String category, String pid, String date, String time, String productStatus, String sellerAddress, String sellerEmail, String sellerID, String sellerName, String sellerPhone) {
         this.pname = pname;
         this.price = price;
         this.description = description;
@@ -19,9 +19,17 @@ public class Products {
         this.pid = pid;
         this.date = date;
         this.time = time;
+        this.productStatus = productStatus;
+        this.sellerAddress = sellerAddress;
+        this.sellerEmail = sellerEmail;
+        this.sellerID = sellerID;
+        this.sellerName = sellerName;
+        this.sellerPhone = sellerPhone;
     }
 
+
     //generating getters and setters
+
 
     public String getPname() {
         return pname;
@@ -85,5 +93,53 @@ public class Products {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public String getProductStatus() {
+        return productStatus;
+    }
+
+    public void setProductStatus(String productStatus) {
+        this.productStatus = productStatus;
+    }
+
+    public String getSellerAddress() {
+        return sellerAddress;
+    }
+
+    public void setSellerAddress(String sellerAddress) {
+        this.sellerAddress = sellerAddress;
+    }
+
+    public String getSellerEmail() {
+        return sellerEmail;
+    }
+
+    public void setSellerEmail(String sellerEmail) {
+        this.sellerEmail = sellerEmail;
+    }
+
+    public String getSellerID() {
+        return sellerID;
+    }
+
+    public void setSellerID(String sellerID) {
+        this.sellerID = sellerID;
+    }
+
+    public String getSellerName() {
+        return sellerName;
+    }
+
+    public void setSellerName(String sellerName) {
+        this.sellerName = sellerName;
+    }
+
+    public String getSellerPhone() {
+        return sellerPhone;
+    }
+
+    public void setSellerPhone(String sellerPhone) {
+        this.sellerPhone = sellerPhone;
     }
 }

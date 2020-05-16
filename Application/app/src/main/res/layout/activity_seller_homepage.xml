@@ -24,7 +24,7 @@
             android:textAlignment="center"
             android:textSize="25sp"
             android:textColor="@android:color/black"
-            android:text="New Orders"
+            android:text="My All  Products "
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
@@ -32,7 +32,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_below="@+id/rlSellerHome"
-        android:id="@+id/rvSellerHomepage"
+        android:id="@+id/rvSellerHomepageUnverifiedProductList"
         android:layout_margin="3dp"
         android:layout_above="@+id/nav_view_bottom"
         android:layout_width="match_parent"
